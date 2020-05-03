@@ -144,7 +144,7 @@ export interface Do0<M, S extends object> {
   done: () => HKT<M, S>
 }
 
-class DoClass<M> {
+export class DoClass<M> {
   constructor(readonly M: Monad<M>, private result: HKT<M, any>) {}
   do(action: HKT<M, any>): DoClass<M> {
     return new DoClass(
